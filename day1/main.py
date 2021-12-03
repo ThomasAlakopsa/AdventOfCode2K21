@@ -2,10 +2,16 @@ sonar_data = []
 previous_sample = 9999
 count = 0
 
-with open('input.txt', 'r') as f:
-    for sample in f:
-        sample = int(sample.strip())
-        sonar_data.append(sample)
+
+def open_file(name):
+    with open(name, 'r') as f:
+        for sample in f:
+            sample = int(sample.strip())
+            sonar_data.append(sample)
+
+
+# day 1 #
+open_file('input.txt')
 
 for current_sample in sonar_data:
     if current_sample > previous_sample:
@@ -13,6 +19,8 @@ for current_sample in sonar_data:
     previous_sample = current_sample
 
 print(f'A: count: {count}')
+
+# day 2 #
 count = 0
 previous_sample = [9999, 9999, 9999]
 
